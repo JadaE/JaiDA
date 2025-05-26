@@ -1,13 +1,19 @@
 import subprocess
 
-with open("resume.tex", "w") as f:
-    f.write(latex_code)
 
-# Compile LaTeX to PDF
-subprocess.run(["pdflatex", "resume.tex"])
-# need pdflatex installed locally to do this
+def readResume():
+   resumeFile = "062025Resume.tex"
+   with open(resumeFile, "r") as f:
+      resume_text = f.read()
+   #print(resume_text[:1000])
+   return resume_text
 
+   # Compile LaTeX to PDF
+   subprocess.run(["pdflatex", "resume.tex"])
+   # need pdflatex installed locally to do this
 
+#with open(resumeFile, "w") as f:
+#      f.write(latex_code)
 '''
 Store your LaTeX resume in a structured .tex template.
 
